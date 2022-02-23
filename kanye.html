@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kanye</title>
+  <style>
+    blockquote {
+      background-color: aqua;
+      padding: 30px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>kanye's quotes</h1>
+  <button onclick="kanye()">kanye</button>
+  <blockquote id="bqt"></blockquote>
+  <script>
+    let bqt = document.getElementById('bqt')
+    kanye = () => {
+      fetch('https://api.kanye.rest/')
+        .then(get => get.json())
+        .then(got => {
+          bqt.innerText = got.quote
+        })
+    }
+  </script>
+</body>
+
+</html>

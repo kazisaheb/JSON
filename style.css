@@ -1,0 +1,21 @@
+body{
+  background-color:antiquewhite;
+}
+.section{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  justify-content: space-evenly;
+}
+ul{
+  list-style: none;
+  background-color: aqua;
+  padding: 10px;
+  width: 250px;
+}
+li{
+  background-color: tomato;
+  margin: 5px 0;
+  padding: 0 5px;
+  color: white;
+}

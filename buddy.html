@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buddy</title>
+  <style>
+    p {
+      background-color: aqua;
+      padding: 15px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Random Buddy</h1>
+  <button onclick="buddy()">Get Buddy</button>
+  <div id="show"></div>
+  <script>
+    let show = document.getElementById('show')
+    buddy = () => {
+      fetch('https://randomuser.me/api/?results=5')
+        .then(get => get.json())
+        .then(got => {
+          for (son of got.results) {
+            let p = document.createElement('p')
+            p.innerText = `Name: ${son.name.title}. ${son.name.first} ${son.name.last}, 
+            Email: ${son.email}, 
+            Nation: ${son.nat}, 
+            Phone: ${son.phone}`
+            show.append(p)
+          }
+        })
+    }
+  </script>
+</body>
+
+</html>
